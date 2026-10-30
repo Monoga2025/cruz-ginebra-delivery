@@ -30,3 +30,6 @@ Not included: `01_VIDEO/VIDEO_PITCH_CRUZ_GINEBRA.mp4` (53 MB, over the 20 MB lim
 - Built for a university mechanisms course. The assembly and the Blender scene were not re-run in this staging pass.
 - The STL files are imported meshes without feature history, so they are for printing or visual reference, not for editing parametric features.
 - The author states every bibliography entry has a verifiable link or DOI; some publisher pages may require institutional access.
+---
+
+> **Consolidated project.** This repository also replaces the former `geneva-drive-mechanism` (identical assets, archived).
