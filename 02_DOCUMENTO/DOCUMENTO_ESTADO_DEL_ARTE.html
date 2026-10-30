@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Mecanismo de Cruz de Ginebra - Estado del arte y bibliografía</title>
+<style>
+  @page { size: A4; margin: 20mm 18mm; }
+  body { font-family: "Segoe UI", Arial, sans-serif; color: #1b2733; line-height: 1.55; font-size: 11.5pt; }
+  h1 { font-size: 26pt; color: #0e7c86; margin: 0 0 4px; }
+  h2 { font-size: 15pt; color: #0f172a; border-bottom: 2px solid #39c5cf; padding-bottom: 4px; margin-top: 26px; }
+  h3 { font-size: 12.5pt; color: #0e7c86; margin-bottom: 2px; }
+  .sub { color: #5b6b7c; font-size: 11pt; }
+  .cover { text-align: center; margin-top: 60mm; }
+  .cover .rule { width: 90px; height: 5px; background: #39c5cf; margin: 18px auto; }
+  .cover .meta { margin-top: 40px; color: #46586a; font-size: 11pt; }
+  .box { background: #f2f7fa; border-left: 4px solid #39c5cf; padding: 10px 14px; margin: 12px 0; }
+  ul { margin-top: 6px; }
+  li { margin-bottom: 3px; }
+  .ref { margin-bottom: 12px; padding-left: 14px; text-indent: -14px; font-size: 10.8pt; }
+  .ref a { color: #0b6d76; text-decoration: none; word-break: break-all; }
+  .ref .tag { display: inline-block; background: #e6f4f6; color: #0b6d76; border-radius: 5px; padding: 0 6px; font-size: 9pt; margin-right: 6px; }
+  code { background: #eef2f6; padding: 1px 5px; border-radius: 4px; font-size: 10pt; }
+  .page-break { page-break-before: always; }
+</style>
+</head>
+<body>
+
+<div class="cover">
+  <h1>Mecanismo de Cruz de Ginebra</h1>
+  <div class="sub">Aplicación en una banda transportadora de movimiento intermitente</div>
+  <div class="rule"></div>
+  <div class="sub">Estado del arte · Trabajos publicados y bibliografía</div>
+  <div class="meta">
+    <p><strong>Autor:</strong> Daniel Monoga</p>
+    <p><strong>Programa:</strong> Ingeniería Mecatrónica — UNAB</p>
+    <p><strong>Curso:</strong> Mecanismos</p>
+    <p><strong>Año:</strong> 2026</p>
+  </div>
+</div>
+
+<div class="page-break"></div>
+
+<h2>Introducción</h2>
+<p>
+Este documento acompaña el proyecto de un mecanismo de <strong>Cruz de Ginebra</strong> (también llamado
+<em>Geneva drive</em> o <em>Maltese cross</em>) integrado a una banda transportadora. No pretende ser un
+trabajo de expertos: la idea es <strong>tocar el tema</strong>, entender de qué se trata y mostrar qué se ha
+publicado al respecto, con sus fuentes reales y enlaces verificables.
+</p>
+<div class="box">
+  <strong>La idea central del mecanismo:</strong> convertir un giro <em>continuo</em> (por ejemplo el de un
+  motor) en un movimiento <em>intermitente</em> y repetible: avanza, se detiene, avanza, se detiene.
+  Ese "alto y siga" es lo que necesita una línea de producción cuando un producto debe quedar quieto
+  en una estación (inspección, llenado, etiquetado) y luego seguir.
+</div>
+
+<h2>¿Qué es la Cruz de Ginebra?</h2>
+<p>
+Es un mecanismo compuesto por dos piezas principales:
+</p>
+<ul>
+  <li>Un <strong>disco impulsor</strong> que gira de forma continua y lleva un <strong>pasador</strong> excéntrico.</li>
+  <li>Una <strong>cruz</strong> (rueda de Ginebra) con ranuras radiales; en nuestro caso, cuatro ranuras.</li>
+</ul>
+<p>
+Mientras el pasador está <strong>fuera</strong> de la ranura, la cruz permanece <strong>detenida</strong> (reposo).
+Cuando el pasador <strong>entra</strong> en una ranura, la empuja y la cruz gira un ángulo fijo. Con cuatro ranuras,
+cada vuelta completa del impulsor produce un giro de <strong>90°</strong> en la cruz, y después de cuatro vueltas
+del impulsor la cruz completa <strong>360°</strong>.
+</p>
+<div class="box">
+  Si el impulsor gira a <strong>60 RPM</strong>, da <strong>1 vuelta por segundo</strong>, es decir
+  <strong>360° por segundo</strong>. Así se relaciona directamente el tiempo con el número de vueltas:
+  1 s → 1 vuelta, 2 s → 2 vueltas, 3 s → 3 vueltas.
+</div>
+
+<h2>Estado del arte: qué se ha publicado</h2>
+<p>
+El mecanismo de Ginebra es un tema clásico de la teoría de máquinas y sigue estudiándose hoy. A continuación,
+los trabajos que sirvieron de base, explicados en palabras simples. Todas las referencias son reales y tienen
+su enlace.
+</p>
+
+<h3>1) Análisis cinemático comparando número de ranuras</h3>
+<p>
+Un estudio reciente compara cruces de 4, 6 y 8 ranuras usando simulaciones en MATLAB. Concluye que
+<strong>a más ranuras, el movimiento es más suave</strong> (menos aceleración pico), lo que reduce desgaste y
+vibración. Es muy útil para entender por qué se elige una u otra cantidad de ranuras.
+</p>
+
+<h3>2) Diseño con ranuras curvas (mejora del comportamiento)</h3>
+<p>
+Varios autores proponen <strong>ranuras curvas</strong> en lugar de ranuras rectas. La ventaja: se eliminan
+los "golpes" (aceleraciones bruscas) al inicio y al final del movimiento, y se puede ajustar la curva sin
+cambiar la relación entre reposo y movimiento. Son los trabajos de Figliolini &amp; Angeles, y de Lee.
+</p>
+
+<h3>3) Optimización de la velocidad de entrada</h3>
+<p>
+Otros trabajos optimizan cómo varía la velocidad del impulsor para que la cruz se mueva mejor, usando
+algoritmos de optimización. Muestran que se puede mejorar el comportamiento cinemático sin cambiar la geometría.
+</p>
+
+<h3>4) Diseño asistido por computadora y educación</h3>
+<p>
+Hay artículos enfocados en el <strong>diseño CAD</strong> del mecanismo (por ejemplo, el diseño clásico externo)
+y en su uso como <strong>material didáctico</strong> para enseñar movimiento intermitente. Justamente encaja con
+nuestro enfoque: modelar, simular y explicar.
+</p>
+
+<h3>5) Fabricación e impresión 3D</h3>
+<p>
+Un trabajo de 2022 desarrolla una <strong>rueda de Ginebra impresa en 3D</strong> y valida su funcionamiento.
+Esto respalda directamente la idea de fabricar el prototipo con impresión 3D, como se planteó en el proyecto.
+</p>
+
+<h3>6) Aplicaciones: mecanismos combinados y motores</h3>
+<p>
+Existen publicaciones que combinan la Cruz de Ginebra con <strong>trenes de engranajes</strong> o con
+aplicaciones en <strong>motores de combustión</strong>, y otras que la presentan como mecanismo de
+<strong>"cruz de malta"</strong> en textos de ingeniería. Además hay trabajos con <strong>levas ranuradas</strong>
+para aumentar el tiempo de reposo.
+</p>
+
+<h3>7) Tesis y material de referencia en español</h3>
+<p>
+Como ejemplo de trabajo académico completo en español, existe una <strong>tesis de ingeniería mecánica</strong>
+de la Universidad del Valle de Guatemala que diseña y construye un reloj usando mecanismos de Ginebra, con
+cálculos de resistencia (Goodman) y verificación experimental. Es un buen modelo de cómo estructurar un trabajo
+de este tipo.
+</p>
+
+<h2>Aplicaciones típicas del mecanismo</h2>
+<ul>
+  <li><strong>Bandas transportadoras e indexación:</strong> detener el producto en una estación y luego avanzar.</li>
+  <li><strong>Máquinas de ensamblaje y empaque:</strong> posicionar piezas de a un paso.</li>
+  <li><strong>Cambiadores de herramienta (CNC):</strong> girar el carrusel de herramientas en pasos.</li>
+  <li><strong>Mecanismos de relojería y proyectores de cine:</strong> avance cuadro a cuadro.</li>
+</ul>
+
+<h2>Cómo se relaciona con nuestro proyecto</h2>
+<p>
+Nuestro proyecto sigue exactamente esa idea: un disco impulsor a <strong>60 RPM</strong> mueve una
+<strong>cruz de 4 ranuras</strong> que avanza <strong>90° por vuelta</strong>, y ese movimiento se transmite a una
+<strong>banda transportadora</strong> que lleva productos entre estaciones. La diferencia con los trabajos citados
+es que aquí el énfasis está en <strong>visualizar y demostrar</strong> el funcionamiento (simulación, diagramas de
+velocidad y aceleración, animación) y en la <strong>fabricación del prototipo</strong>.
+</p>
+<div class="box">
+  <strong>Idea para defender el proyecto:</strong> el mecanismo no es nuevo (es clásico), pero sigue siendo
+  pertinente porque es simple, robusto y económico; la literatura reciente lo sigue estudiando para mejorar
+  su suavidad y aplicarlo en robótica, automatización y fabricación aditiva.
+</div>
+
+<div class="page-break"></div>
+
+<h2>Bibliografía</h2>
+<p class="sub">Referencias reales con enlace/DOI. Formato tomado de las publicaciones originales.</p>
+
+<div class="ref"><span class="tag">Paper</span>Khan, R., Equbal, N., Kumar, G., Rajbala, &amp; Saif, M. (2026). <em>Improving Kinematic Performance of Geneva Mechanisms in Robotic and Automated Systems: A Comparative Study on Slot Count Using MATLAB Simulations.</em> International Journal of Research and Innovation in Applied Science, 11(4), 1558–1572.<br>Enlace: <a href="https://doi.org/10.51584/IJRIAS.2026.110400116">https://doi.org/10.51584/IJRIAS.2026.110400116</a></div>
+
+<div class="ref"><span class="tag">Paper</span>Figliolini, G., &amp; Angeles, J. (2002). <em>Synthesis of conjugate Geneva mechanisms with curved slots.</em> Mechanism and Machine Theory, 37(10), 1043–1061.<br>Enlace: <a href="https://doi.org/10.1016/S0094-114X(02)00062-9">https://doi.org/10.1016/S0094-114X(02)00062-9</a></div>
+
+<div class="ref"><span class="tag">Paper</span>Lee, H. P. (1998). <em>Design of a Geneva mechanism with curved slots using parametric polynomials.</em> Mechanism and Machine Theory, 33(3), 321–329.<br>Enlace: <a href="https://doi.org/10.1016/S0094-114X(97)00047-5">https://doi.org/10.1016/S0094-114X(97)00047-5</a></div>
+
+<div class="ref"><span class="tag">Paper</span>Chandra Shekhar, A., Shaik, H. S., &amp; Shahab, S. (2021). <em>Analysis of Geneva mechanism using dwell symmetrical coupler curve mechanism.</em> Materials Today: Proceedings, 39, 1402–1406.<br>Enlace: <a href="https://doi.org/10.1016/j.matpr.2020.05.025">https://doi.org/10.1016/j.matpr.2020.05.025</a></div>
+
+<div class="ref"><span class="tag">Paper</span>Lin, W., Tsai, Y., &amp; Hsiao, K. (2017). <em>Optimum variable input speed for kinematic performance of Geneva mechanisms using teaching-learning-based optimization algorithm.</em> Proc. IMechE Part C: J. Mechanical Engineering Science, 231(10), 1871–1883.<br>Enlace: <a href="https://doi.org/10.1177/0954406215623307">https://doi.org/10.1177/0954406215623307</a></div>
+
+<div class="ref"><span class="tag">Paper</span>Lin, W., Tsai, Y., &amp; Hsiao, K. (2017). <em>A new indexing motion program for optimum designs of Geneva mechanisms with curved slots.</em> Proc. IMechE Part C, 231(21), 3974–3986.<br>Enlace: <a href="https://doi.org/10.1177/0954406216656021">https://doi.org/10.1177/0954406216656021</a></div>
+
+<div class="ref"><span class="tag">Paper</span>Stănășel, I., Blaga, F., &amp; Buidos, T. (2014). <em>Computer Aided Design of Classic External Geneva Mechanism.</em> Advanced Materials Research, 1036, 662–667.<br>Enlace: <a href="https://doi.org/10.4028/www.scientific.net/AMR.1036.662">https://doi.org/10.4028/www.scientific.net/AMR.1036.662</a></div>
+
+<div class="ref"><span class="tag">Paper</span>Lee, J. J., &amp; Jan, B. H. (2009). <em>Design of Geneva mechanisms with curved slots for non-undercutting manufacturing.</em> Mechanism and Machine Theory, 44(6), 1192–1200.<br>Enlace: <a href="https://doi.org/10.1016/J.MECHMACHTHEORY.2008.09.003">https://doi.org/10.1016/J.MECHMACHTHEORY.2008.09.003</a></div>
+
+<div class="ref"><span class="tag">Paper</span>Yerubayeva, A., Shehab, E., Malik, K. I., &amp; Ali, Md. H. (2022). <em>Design and Development of 3D Printed Geneva Wheel Mechanism.</em> 2022 International Conference on Electrical, Computer, Communications and Mechatronics Engineering (ICECCME), IEEE, 1–8.<br>Enlace: <a href="https://doi.org/10.1109/ICECCME55909.2022.9988520">https://doi.org/10.1109/ICECCME55909.2022.9988520</a></div>
+
+<div class="ref"><span class="tag">Paper</span>Dooner, D. B., Palermo, A., &amp; Mundo, D. (2014). <em>An intermittent motion mechanism incorporating a Geneva wheel and a gear train.</em> Transactions of the Canadian Society for Mechanical Engineering, 38(3), 359–372.<br>Enlace: <a href="https://doi.org/10.1139/tcsme-2014-0026">https://doi.org/10.1139/tcsme-2014-0026</a></div>
+
+<div class="ref"><span class="tag">Paper</span>Petrescu, F. I. T., Abu-Lebdeh, T. M., &amp; Apicella, A. (2018). <em>Presentation of a Mechanism with a Maltese Cross (Geneva Driver).</em> American Journal of Engineering and Applied Sciences, 11(2), 891–900.<br>Enlace: <a href="https://doi.org/10.3844/ajeassp.2018.891.900">https://doi.org/10.3844/ajeassp.2018.891.900</a></div>
+
+<div class="ref"><span class="tag">Paper</span>Pasika, V., Nosko, P., Nosko, O., Bashta, O., Heletiy, V., &amp; Melnyk, V. (2024). <em>A method to synthesise groove cam Geneva mechanisms with increased dwell period.</em> Proc. IMechE Part C, 238(15), 7544–7555.<br>Enlace: <a href="https://doi.org/10.1177/09544062241234477">https://doi.org/10.1177/09544062241234477</a></div>
+
+<div class="ref"><span class="tag">Paper</span>Zhang, D., Reed, M., Li, B., Gao, Z., &amp; Ge, Y. (2009). <em>Design optimization of a Geneva mechanism for internal combustion engine application.</em> 2009 International Conference on Information and Automation (ICINFA), IEEE, 649–654.<br>Enlace: <a href="https://doi.org/10.1109/ICINFA.2009.5205002">https://doi.org/10.1109/ICINFA.2009.5205002</a></div>
+
+<div class="ref"><span class="tag">Tesis</span>Pérez Gutiérrez, Fernando Enrique (2014). <em>Diseño y construcción de un reloj utilizando mecanismos de ginebra.</em> Tesis de Licenciatura en Ingeniería Mecánica, Facultad de Ingeniería, Universidad del Valle de Guatemala (86 p.).<br>Enlace: <a href="https://repositorio.uvg.edu.gt/handle/123456789/3187">https://repositorio.uvg.edu.gt/handle/123456789/3187</a></div>
+
+<div class="ref"><span class="tag">Libro</span>Norton, R. L. (2019). <em>Design of Machinery: An Introduction to the Synthesis and Analysis of Mechanisms and Machines</em> (6.ª ed.). McGraw-Hill.</div>
+
+<div class="ref"><span class="tag">Libro</span>Mabie, H. H., &amp; Reinholtz, C. F. (1987). <em>Mechanisms and Dynamics of Machinery</em> (4.ª ed.). John Wiley &amp; Sons.</div>
+
+<div class="ref"><span class="tag">Libro</span>Shigley, J. E., Uicker, J. J., &amp; Pennock, G. R. (2017). <em>Theory of Machines and Mechanisms</em> (5.ª ed.). Oxford University Press.</div>
+
+<div class="ref"><span class="tag">Referencia</span>Wikipedia. (2025). <em>Geneva drive.</em><br>Enlace: <a href="https://en.wikipedia.org/wiki/Geneva_drive">https://en.wikipedia.org/wiki/Geneva_drive</a></div>
+
+<p class="sub" style="margin-top:24px">
+Nota: algunos enlaces a editoriales (SAGE, Scientific.net, Canadian Science Publishing) pueden pedir acceso
+institucional; el DOI es el identificador oficial y permite localizar el artículo desde cualquier buscador académico.
+</p>
+
+</body>
+</html>

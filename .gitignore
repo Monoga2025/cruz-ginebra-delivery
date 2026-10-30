@@ -1,0 +1,10 @@
+# OS and editor files
+Thumbs.db
+desktop.ini
+~$*
+*.tmp
+# Blender backups
+*.blend1
+# Python
+__pycache__/
+*.pyc

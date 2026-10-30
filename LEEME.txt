@@ -1,0 +1,61 @@
+ENTREGA - MECANISMO DE CRUZ DE GINEBRA
+======================================
+Ingeniería Mecatrónica - UNAB - Curso: Mecanismos
+Autor: Daniel Monoga
+
+CÓMO USAR ESTA CARPETA
+----------------------
+
+01_VIDEO/
+  VIDEO_PITCH_CRUZ_GINEBRA.mp4   -> Video del pitch (3:28, 1920x1080, 30 fps).
+                                    Incluye: explicación, animaciones del mecanismo,
+                                    contador de RPM, diagramas de velocidad y aceleración.
+
+02_DOCUMENTO/
+  DOCUMENTO_ESTADO_DEL_ARTE.pdf  -> Documento de estado del arte + bibliografía
+                                    con links reales y verificados (6 páginas).
+  DOCUMENTO_ESTADO_DEL_ARTE.html -> Misma versión en HTML (por si quieren ver los links).
+
+03_PIEZAS_STL/
+  9 piezas en STL, listas para imprimir en 3D o abrir en SolidWorks:
+    - Continuous_input_flywheel.stl          (disco impulsor)
+    - Eccentric_hardened_pin.stl             (pasador excéntrico)
+    - Geneva_star_-_four_open_radial_slots.stl (CRUZ DE GINEBRA, 4 ranuras)
+    - Circular_dwell_locking_cam.stl         (leva de retención)
+    - Crank_hub.stl / Crank_arm.stl / Crank_hand_grip.stl (manilla)
+    - Input_shaft.stl / Output_vertical_shaft.stl (ejes)
+  NOTA: son mallas importadas (no tienen historial de operaciones). En SolidWorks se
+  abren como sólido importado. Para imprimir, escalar según el tamaño deseado.
+
+04_SOLIDWORKS/
+  Archivos nativos de SolidWorks:
+    - Cruz.SLDPRT, Circulo.SLDPRT, Base Ginebra.SLDPRT  (piezas del mecanismo)
+    - Ensamblaje1.SLDASM, Ensamblaje1_Nueva carpeta.SLDASM (ensambles)
+    - BandaTransportadora.SLDPRT, Polea.SLDPRT, acomplador.SLDPRT,
+      BaseDeTodo.SLDPRT, BaseBandaTransportadora.SLDPRT, EnsamblajeBandaTransportadora.SLDASM
+  Consejo: abrir primero las piezas .SLDPRT y luego el .SLDASM.
+
+05_BLENDER/
+  GENEVA_CONVEYOR_PROJECT.blend  -> Proyecto completo para ABRIR EN BLENDER.
+                                    Es la forma más linda de mostrar el mecanismo funcionando
+                                    (sin fondo, estilo CAD). Mover el timeline para ver el giro.
+  geneva_conveyor_generator.py   -> Script que genera toda la escena (editable).
+
+06_CAPTURAS/
+  7 capturas PNG 1920x1080 del mecanismo (vistas general, pasador, cruz, banda, 60 RPM, superior).
+
+07_RENDERS/
+  Clips MP4 del mecanismo (estilo SolidWorks, sin fondo) usados en el video.
+
+QUÉ MOSTRARLE AL PROFESOR
+-------------------------
+1) El archivo de SolidWorks (Cruz.SLDPRT + Circulo.SLDPRT + Ensamblaje1.SLDASM).
+2) O el .blend de Blender abierto, donde se ve el mecanismo completo funcionando.
+3) El PDF con el estado del arte y la bibliografía (links reales).
+4) El video del pitch.
+
+IMPORTANTE SOBRE LA BIBLIOGRAFÍA
+--------------------------------
+Todas las referencias del PDF son reales y tienen enlace/DOI verificable.
+Algunos enlaces de editoriales (SAGE, Scientific.net, Canadian Science Publishing)
+pueden pedir acceso institucional: el DOI es el identificador oficial.
